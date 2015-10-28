@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class StuInfo {
+	public StuInfo() {
+	}
 	public void AddStuInfo(int id, String name, String dept, int phone){
 	}
 	public void UpdateStuInfo(int id){
