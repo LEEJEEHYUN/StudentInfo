@@ -20,7 +20,9 @@ public class ViewStuInfo extends FileManage{
 					String stu_name = st.nextToken();
 					String stu_dept = st.nextToken();
 					String stu_phone = st.nextToken();
-					System.out.println(stu_id + stu_name + stu_dept + stu_phone);
+					System.out.println("============= 학 생 정 보 =============");
+					System.out.println(stu_id + "/" + stu_name + "/" + stu_dept + "/" + stu_phone);
+					System.out.println();
 					break;
 				}
 				contents = buffRead.readLine();

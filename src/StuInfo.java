@@ -15,7 +15,7 @@ public class StuInfo {
 		BufferedReader inbr = new BufferedReader(insr);
 		Scanner scan = new Scanner(System.in);
 		while(true){
-			System.out.println("원하는 메뉴를 누르세요( 1 : 학생 정보 추가 / 2 : 학생 정보 수정 / 3 : 학생 정보 삭제 / 4 : 학생 정보 보기)");
+			System.out.print("원하는 메뉴를 누르세요( 1 : 학생 정보 추가 / 2 : 학생 정보 수정 / 3 : 학생 정보 삭제 / 4 : 학생 정보 보기) : ");
 			menu_num = scan.nextInt();
 			switch(menu_num){
 				case 1:
@@ -24,17 +24,17 @@ public class StuInfo {
 					addinfo.Addstuinfo(stu_info);
 					break;
 				case 2:
-					System.out.println("수정할 학생의 학번을 입력하세요");
+					System.out.print("수정할 학생의 학번을 입력하세요 : ");
 					stu_id = scan.nextInt();
 					updateinfo.Updatestuinfo(stu_id);
 					break;
 				case 3:
-					System.out.println("삭제할 학생의 학번을 입력하세요");
+					System.out.print("삭제할 학생의 학번을 입력하세요 : ");
 					stu_id = scan.nextInt();
 					deleteinfo.Deletestuinfo(stu_id);
 					break;
 				case 4:
-					System.out.println("학생의 학번을 입력하세요");
+					System.out.print("학생의 학번을 입력하세요 : ");
 					stu_id = scan.nextInt();
 					viewinfo.Viewstuinfo(stu_id);
 					break;
