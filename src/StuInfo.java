@@ -19,7 +19,7 @@ public class StuInfo {
 			menu_num = scan.nextInt();
 			switch(menu_num){
 				case 1:
-					System.out.println("학생 정보를 추가하세요( 학번 , 이름 , 학과명 , 핸드폰 )");
+					System.out.print("학생 정보를 추가하세요( 학번 , 이름 , 학과명 , 핸드폰 ) : ");
 					stu_info = inbr.readLine();  
 					addinfo.Addstuinfo(stu_info);
 					break;
