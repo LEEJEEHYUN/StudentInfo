@@ -1,8 +1,6 @@
 import java.io.*; 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
+//import java.io.FileInputStream;
 
 class StuInfo {
 	File stu_info = new File("stu_info");
@@ -45,22 +43,22 @@ class StuInfo {
 		return count;
 	}
 	static String output(File file) {
-			int b;
-			String fileContent = "";
-			try
-			{			
-				BufferedReader buffRead = new BufferedReader(new FileReader(file));
-
+	//	File file = new File("stu_info");
+		int b;
+		String fileContent = "";
+		try	{			
+			BufferedReader buffRead = new BufferedReader(new FileReader(file));
 				while ((b = buffRead.read()) != -1) {
 					fileContent += (char)b;
 				}
+			//	System.out.println(fileContent);
 				buffRead.close();	
 			}
-			catch (Exception e)
-			{
-				System.out.println(e);
-			}
-			return fileContent;	
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		return fileContent;	
 	}
 
 	public void AddStuInfo(String stu_info){
@@ -68,10 +66,32 @@ class StuInfo {
 		System.out.println("학생의 정보가 입력되었습니다.");
 	}
 	public void UpdateStuInfo(int id){
+		int buffer;
+		String find_id = ""+ id;
+		String fileContent ="";
+		try{
+			File aFile = new File("stu_info");
+			
+			BufferedReader reader = new BufferedReader(new FileReader(aFile));
+			String line =" ";
+			while((line=reader.readLine())!=null){
+				if (line.indexOf(find_id) == -1){
+					break;
+				}
+				else{
+					// 전화번호가 있는인덱스를 찾아.System.out.println(line);
+				}
+			}
+			reader.close(); 
+		}
+		catch(Exception ex){
+			
+		}
 	}
 	public void DeleteStuInfo(int id){
 	}
 	public void ViewStuInfo(int id){
+		
 	}
 }
 public class Test{
