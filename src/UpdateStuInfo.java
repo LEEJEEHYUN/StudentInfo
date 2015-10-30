@@ -24,8 +24,6 @@ public class UpdateStuInfo extends FileManage{
 			while ((strLine = buffRead.readLine()) != null) { 
 				StringTokenizer st = new StringTokenizer(strLine,",");
 				String stu_id = st.nextToken(); 
-				if(stu_id == "\n")
-					content += strLine + "\n"; 
 				if(stu_id.equals(id)) {
 					count_modify++;
 					System.out.print("수정할 핸드폰 번호를 입력하세요 : ");
