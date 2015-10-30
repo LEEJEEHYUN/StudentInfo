@@ -15,7 +15,7 @@ public class StuInfo {
 		BufferedReader inbr = new BufferedReader(insr);
 		Scanner scan = new Scanner(System.in);
 		while(true){
-			System.out.print("원하는 메뉴를 누르세요( 1 : 학생 정보 추가 / 2 : 학생 정보 수정 / 3 : 학생 정보 삭제 / 4 : 학생 정보 보기) : ");
+			System.out.print("원하는 메뉴를 눌러주세요( 1 : 학생 정보 추가 / 2 : 학생 정보 수정 / 3 : 학생 정보 삭제 / 4 : 학생 정보 보기) : ");
 			menu_num = scan.nextInt();
 			switch(menu_num){
 				case 1:

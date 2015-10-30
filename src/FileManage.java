@@ -10,8 +10,8 @@ public class FileManage {
 	File stu_info = new File("stu_info");
 
 	public void input(String str) {
-		int fileLen = fileLength(stu_info);
-		String fileOut = output(stu_info);
+		int fileLen = fileLength(stu_info); 
+		String fileOut = output(stu_info); 
 
 		try
 		{
@@ -32,12 +32,13 @@ public class FileManage {
 		}
 	}
 	static int fileLength(File file) {
-		int b,count = 0;
+		int read,file_count = 0;
+		
 		try
 		{		
 			BufferedReader buffRead = new BufferedReader(new FileReader(file));
-			while ((b = buffRead.read()) != -1) {
-				count++;
+			while ((read = buffRead.read()) != -1) {
+				file_count++;
 			}
 			buffRead.close();		
 		}
@@ -45,16 +46,15 @@ public class FileManage {
 		{
 			System.out.println(e);
 		}
-		return count;
+		return file_count;
 	}
 	static String output(File file) {
-		//File file = new File("stu_info");
-		int b;
+		int read;
 		String fileContent = "";
 		try	{			
 			BufferedReader buffRead = new BufferedReader(new FileReader(file));
-			while ((b = buffRead.read()) != -1) {
-				fileContent += (char)b;
+			while ((read = buffRead.read()) != -1) {
+				fileContent += (char)read;
 			}
 			buffRead.close();	
 		}
@@ -64,5 +64,4 @@ public class FileManage {
 		}
 		return fileContent;	
 	}
-
 }
