@@ -7,14 +7,15 @@ public class ViewStuInfo extends FileManage{
 	public void Viewstuinfo(int stu){
 		String id = Integer.toString(stu);
 		int count_exist = 0;
+		String contents ;
 
 		try{
 			FileReader filereader = new FileReader(stu_info);
 			BufferedReader buffRead = new BufferedReader(filereader);
 
-			String contents = buffRead.readLine();
-
-			while(contents != null){
+			while((contents=buffRead.readLine()) != null){
+				if(contents.trim().length() == 0) 
+					continue;
 				StringTokenizer st = new StringTokenizer(contents,",");
 				String stu_id = st.nextToken();
 				if(stu_id.equals(id))
@@ -28,7 +29,6 @@ public class ViewStuInfo extends FileManage{
 					System.out.println();
 					break;
 				}
-				contents = buffRead.readLine();
 			}
 			buffRead.close();
 			filereader.close();

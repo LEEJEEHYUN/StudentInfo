@@ -15,6 +15,8 @@ public class DeleteStuInfo extends FileManage{
 		try { 
 			BufferedReader fileReader = new BufferedReader(new FileReader(stu_info)); 
 			while ((strLine = fileReader.readLine()) != null) {
+				if(strLine.trim().length() == 0) 
+					continue;
 				count_remain++;
 				StringTokenizer st = new StringTokenizer(strLine,",");
 				String stu_id = st.nextToken(); 

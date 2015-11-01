@@ -21,7 +21,9 @@ public class UpdateStuInfo extends FileManage{
 		
 		try { 
 			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info)); 
-			while ((strLine = buffRead.readLine()) != null) { 
+			while ((strLine = buffRead.readLine()) != null) {
+				if(strLine.trim().length() == 0) 
+					continue;
 				StringTokenizer st = new StringTokenizer(strLine,",");
 				String stu_id = st.nextToken(); 
 				if(stu_id.equals(id)) {
