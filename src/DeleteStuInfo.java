@@ -5,16 +5,16 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class DeleteStuInfo extends FileManage{
-	public void Deletestuinfo(int stu){
-		String id = Integer.toString(stu);
+
+	public void Deletestuinfo(String id){
 		String strLine = "0"; 
 		String content = ""; 
 		int count_remain = 0;
 		int count_delete = 0;
-		
+
 		try { 
-			BufferedReader fileReader = new BufferedReader(new FileReader(stu_info)); 
-			while ((strLine = fileReader.readLine()) != null) {
+			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info)); 
+			while ((strLine = buffRead.readLine()) != null) {
 				if(strLine.trim().length() == 0) 
 					continue;
 				count_remain++;
@@ -25,12 +25,11 @@ public class DeleteStuInfo extends FileManage{
 					count_delete++;
 				}
 			} 
-			
 			FileWriter filewriter = new FileWriter(stu_info); 
 			filewriter.write(content); 
 			filewriter.flush(); 
 			filewriter.close(); 
-			fileReader.close();
+			buffRead.close();
 			if(count_remain - count_delete == 1)
 				System.out.println("======== 학생의 정보가 삭제되었습니다. ========");
 			else

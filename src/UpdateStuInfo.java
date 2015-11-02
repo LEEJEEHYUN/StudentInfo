@@ -1,24 +1,16 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-import java.io.*; 
 import java.util.*;
 
 public class UpdateStuInfo extends FileManage{
-	public void Updatestuinfo(int stu){
+	public void Updatestuinfo(String id){
 		Scanner scan = new Scanner(System.in);
-		String id = Integer.toString(stu);
 		String strLine = "0"; 
 		String content = ""; 
 		int count_modify = 0;
-		
 		try { 
 			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info)); 
 			while ((strLine = buffRead.readLine()) != null) {
@@ -38,7 +30,6 @@ public class UpdateStuInfo extends FileManage{
 				else
 					content += strLine + "\n"; 
 			}
-
 			FileWriter filewriter = new FileWriter(stu_info); 
 			filewriter.write(content); 
 			filewriter.flush(); 

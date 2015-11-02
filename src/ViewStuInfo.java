@@ -4,15 +4,11 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class ViewStuInfo extends FileManage{
-	public void Viewstuinfo(int stu){
-		String id = Integer.toString(stu);
+	public void Viewstuinfo(String id){
 		int count_exist = 0;
 		String contents ;
-
 		try{
-			FileReader filereader = new FileReader(stu_info);
-			BufferedReader buffRead = new BufferedReader(filereader);
-
+			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info));
 			while((contents=buffRead.readLine()) != null){
 				if(contents.trim().length() == 0) 
 					continue;
@@ -31,15 +27,13 @@ public class ViewStuInfo extends FileManage{
 				}
 			}
 			buffRead.close();
-			filereader.close();
-			
 			if(count_exist == 0){
 				System.out.println("======== 입력하신 학생의 정보가 존재하지 않습니다. ========");
 				System.out.println();
 			}
-		}catch(IOException e){
-			
+		}catch(IOException ioe){
+			ioe.printStackTrace(); 
 		}
-		
+
 	}
 }
