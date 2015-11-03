@@ -6,13 +6,13 @@ import java.util.StringTokenizer;
 public class ViewStuInfo extends FileManage{
 	public void Viewstuinfo(String id){
 		int count_exist = 0;
-		String contents ;
+		String strLine;
 		try{
 			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info));
-			while((contents=buffRead.readLine()) != null){
-				if(contents.trim().length() == 0) 
+			while((strLine=buffRead.readLine()) != null){
+				if(strLine.trim().length() == 0) 
 					continue;
-				StringTokenizer st = new StringTokenizer(contents,",");
+				StringTokenizer st = new StringTokenizer(strLine,",");
 				String stu_id = st.nextToken();
 				if(stu_id.equals(id))
 				{
@@ -34,6 +34,5 @@ public class ViewStuInfo extends FileManage{
 		}catch(IOException ioe){
 			ioe.printStackTrace(); 
 		}
-
 	}
 }

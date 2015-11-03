@@ -8,8 +8,8 @@ import java.util.*;
 public class UpdateStuInfo extends FileManage{
 	public void Updatestuinfo(String id){
 		Scanner scan = new Scanner(System.in);
-		String strLine = "0"; 
-		String content = ""; 
+		String strLine; 
+		String content; 
 		int count_modify = 0;
 		try { 
 			BufferedReader buffRead = new BufferedReader(new FileReader(stu_info)); 
@@ -46,4 +46,3 @@ public class UpdateStuInfo extends FileManage{
 		} 
 	}
 }
-

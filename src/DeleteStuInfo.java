@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class DeleteStuInfo extends FileManage{
-
 	public void Deletestuinfo(String id){
 		String strLine = "0"; 
 		String content = ""; 
