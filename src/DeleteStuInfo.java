@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 public class DeleteStuInfo extends FileManage{
 	public void Deletestuinfo(String id){
+		String cont;
 		String strLine = "0"; 
 		String content = ""; 
 		int count_remain = 0;
