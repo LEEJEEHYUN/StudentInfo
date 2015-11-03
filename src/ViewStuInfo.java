@@ -35,4 +35,5 @@ public class ViewStuInfo extends FileManage{
 			ioe.printStackTrace(); 
 		}
 	}
+	
 }
